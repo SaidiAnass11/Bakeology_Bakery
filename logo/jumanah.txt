@@ -1,0 +1,71 @@
+Alert alert = new Alert (Alert.AlertType.NONE);
+        //////////Action on rent a property page contollers\\\\\\\\\\\\
+        continueButton.setOnAction(e -> {
+            boolean neighbortf = neighborField.getText().isEmpty();
+            boolean streettf = streetField.getText().isEmpty();
+            boolean locationtf = locationField.getText().isEmpty();
+            boolean zctf = zipCodeField.getText().isEmpty();
+            
+            boolean propertytf = properytField.getText().isEmpty();
+            boolean descriptiontf = descriptionArea.getText().isEmpty();
+            
+            if (neighbortf || streettf || locationtf || zctf || propertytf || descriptiontf || imageList == null) {
+                alert.setAlertType(Alert.AlertType.ERROR);
+                alert.setContentText("Fill in all the Fields please");
+                alert.show();
+            } else {
+                property_address address = new property_address();
+                address.setCity(cities.getValue());
+                address.setNeighborhood(neighborField.getText());
+                address.setStreet(streetField.getText());
+                address.setLocatioLink(locationField.getText());
+                address.setZipcode(zipCodeField.getText());
+
+                SpaceValue = Double.parseDouble(spaceField.getText());
+
+                property propertyToRent = new property();
+                propertyToRent.setPropertyName(properytField.getText());
+                propertyToRent.setPropertyType(types.getValue());
+                propertyToRent.setDescription(descriptionArea.getText());
+                propertyToRent.setZipcode(zipCodeField.getText());
+                propertyToRent.setOutdoorSeatingCapacity(outdoorComboBox.getValue());
+                propertyToRent.setLivingRoomCapacity(livingRoomComboBox.getValue());
+                propertyToRent.setPrice(price);
+                propertyToRent.setUnitSpace(SpaceValue);
+                propertyToRent.setRoomsNum(roomsComboBox.getValue());
+                propertyToRent.setMasterBedsNum(masterBedsComboBox.getValue());
+                propertyToRent.setSingleBedsNum(singleBedsComboBox.getValue());
+                propertyToRent.setBedroomsNum(bedroomComboBox.getValue());
+                propertyToRent.setBathroomsNum(bathroomsComboBox.getValue());
+                propertyToRent.setSingle(singles.isSelected());
+                propertyToRent.setFamilies(families.isSelected());
+                propertyToRent.setPool(pool.isSelected());
+                propertyToRent.setPlayground(playground.isSelected());
+                propertyToRent.setGarden(garden.isSelected());
+                propertyToRent.setFootball(footballCourt.isSelected());
+
+                imagep imagep = new imagep();
+
+                try {
+                    for (int i = 0; i < imageList.size(); i++) {
+                        System.out.println("****" + imageList.get(i));
+                        stream = new FileInputStream(imageList.get(i));
+                        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                        byte[] buf = new byte[1024];
+                        for (int readNum; (readNum = stream.read(buf)) != -1;) {
+                            bos.write(buf, 0, readNum);
+                        }
+                        convert = bos.toByteArray();
+                        imagep.setPropertyID(propertyToRent.getPropertyId());
+                        imagep.setImages(convert);
+
+                    }
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(Project.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(Project.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                primaryStage.setScene(OwnerPaymentInformation.ownerPaymentInformation(primaryStage, propertyToRent, address, imagep));
+            }
+        });

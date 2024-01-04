@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Custom Cakes</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <header class="top-display-decoration">
+      <div class="v-rectangle">
+        <h1><br />Custom Cakes</h1>
+        <div class="wrapper">
+          <div class="typing-decoration">
+            Because every cake has a story to tell.
+          </div>
+        </div>
+      </div>
+      <div class="h-rectangle">
+        <img class="logo" src="/logo/logowhite.png" alt="" />
+      </div>
+      <img class="frame" src="Extra/frame.png" alt="frame" />
+    </header>
+    <header class="navigate">
+      <a href="home-page.html" target="_self" alt="Home Page">
+        <img src="nav/Home.png" alt="Home" />
+      </a>
+
+      <a href="menu.html" target="_self" alt="Menu Page">
+        <img src="nav/Menu.png" alt="Menu" />
+      </a>
+
+      <a href="contactUs.html" target="_self" alt="Contact Us Page">
+        <img src="nav/contact.png" alt="contact" />
+      </a>
+
+      <a href="about-us.html" target="_self" alt="About US Page">
+        <img src="nav/aboutUs.png" alt="About us" />
+      </a>
+    </header>
+
+    <a href="myOrder.html" target="_self" alt="Order Page">
+      <img class="cart" src="Extra/cart.png" alt="cart" />
+    </a>
+
+    <div class="content-decoration">
+      <form method="post" enctype="multipart/form-data">
+        <!-- action="upload.url" -->
+        <fieldset>
+          <legend>WHAT IS THE CAKE SIZE?</legend>
+          <div>
+            <!-- <label for="caketype">What type of cake it is ?: </label> -->
+            <input type="radio" id="10inch" name="inchset" required />
+            <label for="10inch">10" = 150 SR </label>
+            <input type="radio" id="8inch" name="inchset" />
+            <label for="8inch">8" = 100 SR </label>
+            <input type="radio" id="6inch" name="inchset" />
+            <label for="6inch">6" = 85 SR </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>WHAT TYPE OF CAKE IT IS?</legend>
+          <div>
+            <!-- <label for="caketype">What type of cake it is ?: </label> -->
+            <input type="radio" id="birthday" name="radioset" required />
+            <label for="birthday">birthday cake </label>
+            <input type="radio" id="anniversy" name="radioset" />
+            <label for="anniversy">anniversy cake </label>
+            <input type="radio" id="grduation" name="radioset" />
+            <label for="grduation">grduation cake </label>
+            <input type="radio" id="custom" name="radioset" />
+            <label for="custom">custom cake </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>CHOOSE THE CAKE FLAVOR</legend>
+          <input type="checkbox" id="chocolate" name="boxset" />
+          <label for="chocolate">chocolate</label><br />
+
+          <input type="checkbox" id="redvelvet" name="boxset" />
+          <label for="redvelvet">red velvet</label><br />
+
+          <input type="checkbox" id="vanilla" name="boxset" />
+          <label for="vanilla">vanilla</label><br />
+
+          <input type="checkbox" id="rainbow" name="boxset" />
+          <label for="rainbow">layerd rainbow</label><br />
+
+          <input type="checkbox" id="orange" name="boxset" />
+          <label for="orange">orange</label><br />
+        </fieldset>
+
+        <fieldset>
+          <legend>CHOOSE THE FILLING</legend>
+          <div>
+            <!-- <label for="caketype">What type of cake it is ?: </label> -->
+            <input type="radio" id="chocolatefill" name="fillset" />
+            <label for="chocolatefill">chocolate</label>
+            <input type="radio" id="strawberryfill" name="fillset" />
+            <label for="strawberryfill">strawberry</label>
+            <input type="radio" id="whitefill" name="fillset" />
+            <label for="whitefill">white cream</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="extratopping">
+          <legend>EXTRA TOPPING TO YOUR CAKE</legend>
+          <div>
+            <label for="icing">icing: </label>
+            <select name="icing" id="icing">
+              <option value="cs">buttercream</option>
+              <option value="isy">whipped</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="file">add a picture to the top of the cake :</label>
+            <input type="file" name="file" id="file" />
+          </div>
+
+          <div>
+            <label for="massege"
+              >Massage on cake :
+              <input type="text" name="Massage" />
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>NOTE TO BAKERY . . .</legend>
+          <textarea name="bio" id="bio" cols="96" rows="10"></textarea>
+        </fieldset>
+
+        <!-- <input class="submit-deco" type="submit" value="Submit Application" /> -->
+        <div class="wrap">
+          <button class="button">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <small
+        >This is a project for Internet Application course supervised by
+        Dr.Areej Alfraih <br />
+        <pre> Jumanah Alwafi    Rawan Abdu    Reem Alsharif   Manar Alemam</pre>
+        <strong>Coded with LOVE! &copy;</strong>
+      </small>
+    </footer>
+  </body>
+</html>
